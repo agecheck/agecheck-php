@@ -252,8 +252,8 @@ final class VerifierTest extends TestCase
         return [
             'kty' => 'EC',
             'crv' => 'P-256',
-            'x' => $this->base64UrlEncode($x),
-            'y' => $this->base64UrlEncode($y),
+            'x' => $this->base64UrlEncode($this->leftPadCoordinate($x, 32)),
+            'y' => $this->base64UrlEncode($this->leftPadCoordinate($y, 32)),
             'alg' => 'ES256',
             'use' => 'sig',
             'kid' => $kid,
@@ -263,5 +263,17 @@ final class VerifierTest extends TestCase
     private function base64UrlEncode(string $value): string
     {
         return rtrim(strtr(base64_encode($value), '+/', '-_'), '=');
+    }
+
+    private function leftPadCoordinate(string $coordinate, int $expectedSize): string
+    {
+        $length = strlen($coordinate);
+        if ($length === $expectedSize) {
+            return $coordinate;
+        }
+        if ($length > $expectedSize) {
+            return substr($coordinate, -$expectedSize);
+        }
+        return str_repeat("\x00", $expectedSize - $length) . $coordinate;
     }
 }
