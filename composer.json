@@ -1,0 +1,26 @@
+{
+  "name": "agecheck/php",
+  "description": "PHP verification library for AgeCheck age-verification tokens",
+  "type": "library",
+  "license": "Apache-2.0",
+  "require": {
+    "php": "^8.1 || ^8.2 || ^8.3 || ^8.4 || ^8.5",
+    "firebase/php-jwt": "^7.0.2"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5.63"
+  },
+  "autoload": {
+    "psr-4": {
+      "AgeCheck\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "AgeCheck\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "phpunit --colors=always"
+  }
+}
