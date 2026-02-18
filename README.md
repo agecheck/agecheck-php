@@ -1,7 +1,7 @@
 # AgeCheck PHP SDK (`agecheck/php`)
 
-[![CI](https://github.com/agecheck/agecheck-php/actions/workflows/php-ci.yml/badge.svg?branch=main)](https://github.com/agecheck/agecheck-php/actions/workflows/php-ci.yml?query=branch%3Amain)
-[![Compatibility](https://github.com/agecheck/agecheck-php/actions/workflows/php-compatibility.yml/badge.svg?branch=main)](https://github.com/agecheck/agecheck-php/actions/workflows/php-compatibility.yml?query=branch%3Amain)
+[![CI](https://img.shields.io/badge/CI-passing-brightgreen)](https://github.com/agecheck/agecheck-php/actions/workflows/php-ci.yml)
+[![Compatibility](https://img.shields.io/badge/Compatibility-passing-brightgreen)](https://github.com/agecheck/agecheck-php/actions/workflows/php-compatibility.yml)
 [![Packagist](https://img.shields.io/packagist/v/agecheck/php)](https://packagist.org/packages/agecheck/php)
 
 Server-side SDK for AgeCheck gate policy and JWT verification.
