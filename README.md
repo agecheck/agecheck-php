@@ -26,6 +26,8 @@ composer require agecheck/php
 Requirements:
 - PHP `8.1+`
 
+Quickstart: see `/Quickstart.md`.
+
 ## Core usage
 
 ```php
@@ -186,6 +188,23 @@ Verifier and provider helpers emit stable error codes such as:
 - `invalid_signature`
 - `unknown_key_id`
 - `verify_failed`
+
+## Troubleshooting
+
+If verify responses include:
+
+```json
+{
+  "verified": false,
+  "code": "verify_failed",
+  "error": "Failed to issue verification cookie"
+}
+```
+
+common causes are:
+- `hmacSecret` missing in runtime config or shorter than 32 bytes
+- malformed verification assertion level (must be `N+`, for example `18+`)
+- custom endpoint logic bypassing `Gate`/`Provider` helpers for cookie issuance
 
 ## Examples
 
